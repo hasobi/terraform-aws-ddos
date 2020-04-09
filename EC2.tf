@@ -19,6 +19,8 @@ resource "aws_instance" "ec2WorkshopWebApp" {
   //aws AMI selection -- Amazon Linux 2
   ami = "ami-07ebfd5b3428b6f4d"
 
+  count = 25
+
   //aws EC2 instance type, t2.micro for free tier
   instance_type          = "t2.micro"
   key_name               = "sobi"
